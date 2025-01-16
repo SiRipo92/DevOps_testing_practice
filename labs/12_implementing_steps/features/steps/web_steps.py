@@ -12,7 +12,7 @@ from selenium.webdriver.common.by import By
 
 @given('I am on the "Home Page"')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Given I am on the "Home Page"')
+    context.response = context.driver.get(context.base_url)
 
 
 @when('I set the "Category" to "dog"')
