@@ -21,9 +21,10 @@ def step_impl(context, element_name, text_string):
     element.clear()
     element.send_keys(text_string)
 
-@when('I click the "Search" button')
-def step_impl(context):
-    element = context.driver.find_element(By.ID, 'search-btn')
+@when('I click the "{button}" button')
+def step_impl(context, button):
+    button_id = button.lower() + '-btn'
+    element = context.driver.find_element(By.ID, button_id)
     element.click()
 
 @then('I should see the message "Success"')
