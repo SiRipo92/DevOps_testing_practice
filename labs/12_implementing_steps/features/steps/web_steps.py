@@ -48,4 +48,5 @@ def step_impl(context):
 
 @then('I should not see "Leo" in the results')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Then I should not see "Leo" in the results')
+    element = context.driver.find_element(By.ID, 'search_results')
+    assert "Leo" not in element.text
