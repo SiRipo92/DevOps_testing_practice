@@ -17,7 +17,9 @@ def step_impl(context):
 
 @when('I set the "Category" to "dog"')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: When I set the "Category" to "dog"')
+    element = context.driver.find_element(By.ID, 'pet_category')
+    element.clear()
+    element.send_keys('dog')
 
 
 @when('I click the "Search" button')
