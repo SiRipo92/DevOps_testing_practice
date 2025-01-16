@@ -24,7 +24,8 @@ def step_impl(context):
 
 @when('I click the "Search" button')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: When I click the "Search" button')
+    element = context.driver.find_element(By.ID, 'search-btn')
+    element.click()
 
 
 @then('I should see the message "Success"')
