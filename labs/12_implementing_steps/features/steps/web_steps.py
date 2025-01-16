@@ -30,7 +30,8 @@ def step_impl(context):
 
 @then('I should see the message "Success"')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Then I should see the message "Success"')
+    element = context.driver.find_element(By.ID, 'flash_message')
+    assert "Success" in element.text
 
 
 @then('I should see "Fido" in the results')
